@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 
-gat '/' do
+get '/' do
 	"hello from sinatra"
 end
 
