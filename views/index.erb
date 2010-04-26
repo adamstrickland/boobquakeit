@@ -10,7 +10,7 @@
     <script type="text/javascript" src="/javascripts/jquery.timers.js"></script>
     <script type="text/javascript">
       function tweetToHtml(tweet){
-        when = tweet.when ? tweet.when : '';
+        when = tweet.created_at ? tweet.created_at : '';
         url = tweet.url ? '<a href="'+tweet.url+'">Permalink to this tweet</a>' : '';
         return '<li id="'+tweet.id+'" class="'+tweet.type+'"><h3 class="twitteruser">@'+tweet.user+'</h3><p class="tweet">'+tweet.text+'</p><p class="meta">'+when+' '+url+'</p></li>';
       }

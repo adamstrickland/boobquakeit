@@ -1,7 +1,11 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'activerecord'
 
-set :database, 'sqlite://boobquakeit.db'
+dbconfig = YAML.load(File.read('config/database.yml'))
+ActiveRecord::Base.establish_connection dbconfig['production']
+
+# set :database, 'sqlite://boobquakeit.db'
 # puts "the tweets table doesn't exist" if !database.table_exists?('tweets')
 
 # models just work ...
