@@ -1,0 +1,4 @@
+addressable --version 2.1.2
+em-http-request --version 0.2.7
+sinatra-activerecord --version 0.1.2
+will_paginate --version 2.3.12

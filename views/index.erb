@@ -1,5 +1,31 @@
 <html>
+  <head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery.timers.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        $.getJSON('/tweets', function(data){
+          _.map(data, function(tweet){
+            $('#tweets').prepend('<div class="tweet" id="'+tweet.id+'">@'+tweet.user+' said: '+tweet.text+'</div>');
+          });
+        });
+        
+        $(this).everyTime(10000, 'get_more_tweets', function(){
+          last_id = _.max($('#tweets').children(), function(tweet){ return parseInt(tweet.id); }).id;
+          if(last_id){
+            $.getJSON('/more/'+last_id, function(data){
+              _.map(data, function(tweet){
+                $('#tweets').prepend('<div class="tweet" id="'+tweet.id+'">@'+tweet.user+' said: '+tweet.text+'</div>');
+              });
+            });
+          }
+        });
+      });
+    </script>
+  </head>
   <body>
     <h1>BOOBQUAKE</h1>
+    <div id="tweets"></div>
   </body>
 </html>
