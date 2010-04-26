@@ -1,0 +1,27 @@
+html { font-family: "Trebuchet MS"; font-size: 14px; line-height: 21px; }
+body { background: #f0cfbb url(/images/body-bg.jpg) repeat-x top; }
+div.container { width: 960px; margin: 0 auto; }
+
+hr { clear: both; height: 1px; margin-bottom: -1px; visibility: hidden; }
+
+a { color: #cb6565; text-decoration: underline; }
+a:hover {text-decoration: none; }
+
+div.header { height: 150px; position: relative; }
+	div.header h1 a { display: block; width: 279px; height: 85px; text-indent: -9999px; background: url(/images/boobquake-logo.gif) no-repeat left top; position: absolute; top: 30px; }
+	div.header div.quote { width: 575px; position: absolute; right: 0; top: 30px;}
+		div.quote blockquote { color: #ffffff; font-size: 14px; }
+		div.quote p.quoteauth { color: #ffffff; font-weight: bold; font-size: 13px; }
+		
+div.creator { background: #cb6565; padding: 15px 25px; color: #ffffff; margin-bottom: 25px; }
+	div.creator a { color: #f0cfbb; }
+	
+div.aggragate { background: #ffffff; padding: 15px 25px; width: 585px; float: left; margin-right: 25px; }
+	ul.tweets { }
+		ul.tweets li { padding: 15px 0; font-size: 13px; border-bottom: 1px solid #f0cfbb; }
+			ul.tweets li h3.twitteruser { font-size: 15px; font-weight: bold; color: #cb6565; }
+			ul.tweets li p.meta { font-size: 11px; }
+
+div.sidebar { width: 300px; float: left; }
+
+div.footer p { color: #ffffff; font-size: 12px; padding: 10px 0; }

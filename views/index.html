@@ -10,11 +10,8 @@
     <script type="text/javascript" src="/javascripts/jquery.timers.js"></script>
     <script type="text/javascript">
       function tweetToHtml(tweet){
-        when = tweet.when ? tweet.when : '';
-        url = tweet.url ? '<a href="'+tweet.url+'">Permalink to this tweet</a>' : '';
-        return '<li id="'+tweet.id+'" class="'+tweet.type+'"><h3 class="twitteruser">@'+tweet.user+'</h3><p class="tweet">'+tweet.text+'</p><p class="meta">'+when+' '+url+'</p></li>';
+        return '<li id="'+tweet.id+'"><h3 class="twitteruser">@'+tweet.user+'</h3><p class="tweet">'+tweet.text+'</p><p class="meta">10 Minutes Ago <a href="#">Permalink to this tweet</a></p></li>';
       }
-      
       $(function(){
         $.getJSON('/tweets', function(data){
           _.map(data, function(tweet){
@@ -48,7 +45,8 @@
 				<p>Responding to the above quote, <a href="http://www.blaghag.com/p/about.html" title="Jennifer McCreight">Jennifer McCreight</a> created <a href="http://www.blaghag.com/2010/04/in-name-of-science-i-offer-my-boobs.html" title="Boobquake">Boobquake</a>. The goal: Get women to don immodest clothing in public and then see if earthquakes follow. Here we aggregate the links for your enjoyment.</p>
 			</div>
 			<div class="aggragate">
-				<ul class="tweets" id="tweets"></ul>	
+				<ul class="tweets">
+				</ul>	
 			</div>
 			<div class="sidebar">
 				<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fboobquake.it&amp;layout=standard&amp;show_faces=true&amp;width=300&amp;action=like&amp;font=verdana&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:300px; height:px"></iframe>
@@ -62,7 +60,9 @@
 						google_ad_height = 250;
 						//-->
 						</script>
-						<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+						<script type="text/javascript"
+						src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+						</script>
 					</li>
 					<li>
 						<script type="text/javascript"><!--
@@ -73,7 +73,9 @@
 						google_ad_height = 250;
 						//-->
 						</script>
-						<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+						<script type="text/javascript"
+						src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+						</script>
 					</li>
 				</ul>
 			</div>

@@ -17,7 +17,16 @@ EventMachine.run do
     buffer += chunk
     while line = buffer.slice!(/.+\r?\n/)
       tweet = JSON.parse(line)
-      Tweet.new(:user => tweet['user']['screen_name'], :text => tweet['text']).save if tweet['text']
+      if tweet['text'] 
+        if tweet['text'] =~ /^.*https?:.*$/
+          Tweet.new(
+            :user => tweet['user']['screen_name'], 
+            :text => tweet['text'], 
+            :url => "http://twitter.com/#{tweet['user']['screen_name']}/statuses/#{tweet['id']}",
+            :url_type => (tweet['text'] =~ /^.*(twitpic).*$/ ? 'pic' : 'unk')
+          ).save
+        end
+      end
     end
   end
 end

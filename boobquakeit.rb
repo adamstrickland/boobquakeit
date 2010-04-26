@@ -29,7 +29,7 @@ get '/' do
 end
 
 get '/tweets' do
-  @tweets = Tweet.all
+  @tweets = Tweet.find(:all, :order => "created_at DESC", :limit => 25).reverse
   @tweets.to_json
 end
 
